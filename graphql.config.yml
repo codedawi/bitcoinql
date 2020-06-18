@@ -1,0 +1,7 @@
+projects:
+  bitcoind:
+    schema: "src/bitcoinql/bitcoind/schema.gql"
+    documents: "src/bitcoinql/bitcoind/**/*.gql"
+  lnd:
+    schema: "src/bitcoinql/lnd/schema.gql"
+    documents: "src/bitcoinql/lnd/**/*.gql"
