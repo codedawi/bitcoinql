@@ -1,0 +1,44 @@
+"""status of softforks in progress"""
+type SoftFork {
+    """name of softfork"""
+    id: String
+    """block version"""
+    version: Int
+    """progress toward rejecting pre-softfork blocks true if threshold reached"""
+    reject: Boolean
+}
+
+"""status of BIP9 softforks in progress"""
+type BIP9SoftFork {
+    """name of the softfork"""
+    name: String
+    status: SoftForkStatus
+    bit: Int
+    startTime: Int
+    timeout: Int
+    since: Int
+    statistics: SoftForkStatistics
+}
+
+"""numeric statistics about BIP9 signalling for a softfork, only for 'started' status"""
+type SoftForkStatistics {
+    """length in blocks of the BIP9 signalling period"""
+    period: Int
+    """number of blocks with the version bit set required to activate the feature"""
+    threshold: Int
+    """number of blocks elapsed since the beginning of the current period"""
+    elapsed: Int
+    """number of blocks with the version bit set in the current period"""
+    count: Int
+    """returns false if there are not enough blocks left in this period to pass activation threshold"""
+    possible: Boolean
+}
+
+"""status of BIP9 softforks"""
+enum SoftForkStatus {
+    defined
+    started
+    locked_in
+    active
+    failed
+}

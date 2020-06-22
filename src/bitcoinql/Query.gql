@@ -1,0 +1,19 @@
+type Query {
+    """Returns the hash of the best block in the longest blockchain."""
+    getbestblockhash(): Block
+    """Returns an Object with information about block ‘hash’ and information about each transaction."""
+    getblock(hash: BlockHashString!): Block
+    """Returns an object containing various state info regarding blockchain processing."""
+    getblockchaininfo(): BlockChain
+    """Returns the number of blocks in the longest blockchain."""
+    getblockcount(): Int
+    """Returns hash of block in best-block-chain at height provided."""
+    getblockhash(height: BlockHeight!): BlockHash
+    """Returns information about blockheader for given ‘hash’."""
+    getblockheader(hash: BlockHashString!): BlockHeader
+    """Compute per block statistics for a given window. All amounts are in satoshis."""
+    getblockstats(
+        hash: BlockHashString,
+        height: BlockHeight
+    )
+}

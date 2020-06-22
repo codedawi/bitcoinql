@@ -1,0 +1,41 @@
+"""
+
+"""
+type Block {
+    """block hash, same as provided"""
+    hash: BlockHashString
+    """number of confirmations, or -1 if the block is not on the main chain"""
+    confirmations: Int
+    """block size"""
+    size: Int
+    """block size excluding witness data"""
+    strippedsize: Int
+    """block weight as defined in BIP 141"""
+    weight: Int
+    """block height or index"""
+    height: Int
+    """block version"""
+    version: Int
+    """block version formatted in hexadecimal"""
+    versionHex: String
+    merkleroot: String
+    """list of transaction ids in block"""
+    tx: [TransactionId]
+    """block time in seconds since epoch"""
+    time: Int
+    """median block time in seconds since epoch"""
+    mediantime: Int
+    nonce: Int
+    bits: String
+    difficulty: Int
+    """expected num of hashes required to produce the chain up to this block"""
+    chainwork: String
+    """number of transactions in the block"""
+    nTx: Int
+    """the next block in the chain"""
+    nextblock: BlockHashString
+    """the previous block in the chain"""
+    previousblock: Block
+    """string that is serialized, hex-encoded data for blockhash"""
+    data: HexEncodedData
+}

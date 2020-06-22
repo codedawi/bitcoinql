@@ -1,0 +1,2 @@
+"""string that is serialized, hex-encoded data"""
+scalar HexEncodedData

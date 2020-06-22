@@ -1,0 +1,33 @@
+
+type BlockChain {
+    """current network name"""
+    chain: Network
+    """current number of blocks processed in the server"""
+    blocks: Int
+    """current number of headers we have validated"""
+    headers: Int
+    """hash of the currently best block"""
+    bestblockhash: BlockHash
+    """current mining difficulty"""
+    difficulty: Float
+    """median time for the current best block"""
+    mediantime: Int
+    """estimate of verification progress"""
+    verificationprogress: Int
+    """debug information estimate of whether this node is in initial block"""
+    initialblockdownload: Boolean
+    """total amount of work in active chain, in hexadecimal"""
+    chainwork: String
+    """estimated size of the block and undo files on disk"""
+    size_on_disk: Int
+    """if the blocks are subject to pruning"""
+    pruned: Boolean
+    """lowest-height complete block stored"""
+    pruneheight: Int @if($pruned)
+    """whether automatic pruning is enabled"""
+    automatic_pruning: Boolean @if($pruned)
+    """the target size used by pruning"""
+    prune_target_size: Int @if($pruned)
+    """any network and blockchain warnings"""
+    warnings: String
+}

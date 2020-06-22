@@ -1,0 +1,6 @@
+"""network name as defined in BIP70"""
+enum NetworkName {
+    main
+    test
+    regtest
+}

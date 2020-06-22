@@ -1,0 +1,80 @@
+"""Statistics information about a block."""
+type BlockStatistics {
+    """hash value for block"""
+    blockhash: BlockHash
+    """height index for block"""
+    height: Int
+    """ number of inputs, excluding coinbase"""
+    ins: Int
+    """fees related information"""
+    fees: FeeInfo
+    """the block median time past"""
+    mediantime: Int
+    """number of outputs"""
+    outs: Int
+    """block subsidy"""
+    subsidy: Int
+    """block time"""
+    time: Int
+    """number of segwit transactions"""
+    swTxs: Int
+    """size of all segwit transactions"""
+    swTotal: Int
+    """weight of all segwit transactions divided by segwit scale factor (4)"""
+    swWeight: Int
+    """number of transactions, excluding coinbase"""
+    txs: Int
+    """size of all non-coinbase transactions"""
+    size: Int
+    """weight of all non-coinbase transactions divided by segwit scale factor (4)"""
+    weight: Int
+    """the increase/decrease in the number of unspent outputs"""
+    utxoIncrease: Int
+    """the increase/decrease in size for the utxo index (not discounting op_return and similar)"""
+    utxoSizeIncrease: Int
+}
+
+
+"""Fee related information for given block."""
+type FeeInfo {
+    """fee total"""
+    total: Int
+    """average fee info"""
+    avg: FeeSegment
+    """maximum fee info"""
+    max: FeeSegment
+    """truncated median fee info"""
+    median: FeeSegment
+    """min fee info"""
+    min: FeeSegment
+    """Feerates in percentile weight unit"""
+    percentiles: FeePercentiles
+}
+
+
+"""Segment of information related to fees."""
+type FeeSegment {
+    """fee in the block"""
+    fee: Int
+    """feerate in satoshis per virtual byte"""
+    rate: Int
+    """transaction size"""
+    txsize: Int
+}
+
+
+"""Feerates at the 10th, 25th, 50th, 75th, and 90th percentile weight unit."""
+type FeePercentiles {
+    """10th percentile feerate"""
+    tenth: Float
+    """10th percentile feerate"""
+    twentyFifth: Float
+    """10th percentile feerate"""
+    fifty: Float
+    """10th percentile feerate"""
+    seventyFifth: Float
+    """10th percentile feerate"""
+    ninety: Float
+    """All feerates in order 10th, 25th, 50th, 75th, and 90th percentile"""
+    all: [Float]
+}

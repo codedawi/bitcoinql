@@ -1,0 +1,2 @@
+"""The blockchain height index"""
+scalar BlockHeight

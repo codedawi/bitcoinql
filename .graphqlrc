@@ -1,0 +1,3 @@
+schema: "src/bitcoinql/bitcoind/schema.gql"
+documents: "**/*.gql"
+includes: ["**/*.gql"]
