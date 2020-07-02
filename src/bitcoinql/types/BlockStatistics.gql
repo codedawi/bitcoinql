@@ -4,7 +4,7 @@ type BlockStatistics {
     blockhash: BlockHash
     """height index for block"""
     height: Int
-    """ number of inputs, excluding coinbase"""
+    """ number of inputs excluding coinbase"""
     ins: Int
     """fees related information"""
     fees: FeeInfo
@@ -20,17 +20,17 @@ type BlockStatistics {
     swTxs: Int
     """size of all segwit transactions"""
     swTotal: Int
-    """weight of all segwit transactions divided by segwit scale factor (4)"""
+    """weight of all segwit transactions divided by segwit scale factor 4"""
     swWeight: Int
-    """number of transactions, excluding coinbase"""
+    """number of transactions excluding coinbase"""
     txs: Int
     """size of all non-coinbase transactions"""
     size: Int
-    """weight of all non-coinbase transactions divided by segwit scale factor (4)"""
+    """weight of all non-coinbase transactions divided by segwit scale factor 4"""
     weight: Int
-    """the increase/decrease in the number of unspent outputs"""
+    """the increase or decrease in the number of unspent outputs"""
     utxoIncrease: Int
-    """the increase/decrease in size for the utxo index (not discounting op_return and similar)"""
+    """the increase or decrease in size for the utxo index (not discounting op_return and similar)"""
     utxoSizeIncrease: Int
 }
 
@@ -75,6 +75,6 @@ type FeePercentiles {
     seventyFifth: Float
     """10th percentile feerate"""
     ninety: Float
-    """All feerates in order 10th, 25th, 50th, 75th, and 90th percentile"""
+    """All feerates in order 10th 25th 50th 75th and 90th percentile"""
     all: [Float]
 }

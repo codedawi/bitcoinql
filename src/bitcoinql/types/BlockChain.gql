@@ -16,7 +16,7 @@ type BlockChain {
     verificationprogress: Int
     """debug information estimate of whether this node is in initial block"""
     initialblockdownload: Boolean
-    """total amount of work in active chain, in hexadecimal"""
+    """total amount of work in active chain in hexadecimal"""
     chainwork: String
     """estimated size of the block and undo files on disk"""
     size_on_disk: Int

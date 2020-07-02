@@ -1,8 +1,8 @@
-"""Returns an Object with information about blockheader ‘hash’"""
+"""Returns an Object with information about blockheader hash"""
 type BlockHeader {
-    """block hash, same as provided"""
+    """block hash same as provided"""
     hash: BlockHash
-    """number of confirmations, or -1 if the block is not on the main chain"""
+    """number of confirmations or -1 if the block is not on the main chain"""
     confirmations: Int
     height: BlockHeight
     """block version"""
@@ -26,6 +26,6 @@ type BlockHeader {
     previousblockhash: BlockHash
     """hash of the next block"""
     nextblockhash: BlockHash
-    """string that is serialized, hex-encoded data of blockheader"""
+    """string that is serialized hex-encoded data of blockheader"""
     data: HexEncodedString
 }

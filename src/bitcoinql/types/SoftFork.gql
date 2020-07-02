@@ -20,7 +20,7 @@ type BIP9SoftFork {
     statistics: SoftForkStatistics
 }
 
-"""numeric statistics about BIP9 signalling for a softfork, only for 'started' status"""
+"""numeric statistics about BIP9 signalling for a softfork only for 'started' status"""
 type SoftForkStatistics {
     """length in blocks of the BIP9 signalling period"""
     period: Int

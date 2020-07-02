@@ -2,9 +2,9 @@
 
 """
 type Block {
-    """block hash, same as provided"""
+    """block hash same as provided"""
     hash: BlockHashString
-    """number of confirmations, or -1 if the block is not on the main chain"""
+    """number of confirmations or -1 if the block is not on the main chain"""
     confirmations: Int
     """block size"""
     size: Int
@@ -36,6 +36,6 @@ type Block {
     nextblock: BlockHashString
     """the previous block in the chain"""
     previousblock: Block
-    """string that is serialized, hex-encoded data for blockhash"""
+    """string that is serialized hex-encoded data for blockhash"""
     data: HexEncodedData
 }
